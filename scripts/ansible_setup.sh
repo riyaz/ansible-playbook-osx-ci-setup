@@ -11,5 +11,7 @@ PROD=$(softwareupdate -l |
 softwareupdate -i "$PROD" --verbose
 rm /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 
-curl https://bootstrap.pypa.io/get-pip.py | python
-pip install ansible
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py --user
+python -m pip install --user ansible
